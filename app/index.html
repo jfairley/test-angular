@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="test-app">
 <head>
     <title>Angular Test</title>
-    <base href="http://www.w3schools.com/images/" target="_blank">
+    <!--<base href="http://www.w3schools.com/images/" target="_blank">-->
     <link rel="stylesheet" type="text/css" href="styles/vendor/foundation/foundation.min.css" media="all"/>
 </head>
 <body>
 
-<div ng-app="app">
-    <div ng-controller="AppCtrl">
-
-        <h1>{{data.message}}</h1>
-        <div class="button">abcd</div>
-    </div>
+<div>
+    <div ng-view=""/>
 </div>
 
 <script type="text/javascript" src="scripts/vendor/angular/angular.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/services/AuthService.js"></script>
 <script type="text/javascript" src="scripts/login.js"></script>
 
 </body>

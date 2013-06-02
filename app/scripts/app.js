@@ -1,19 +1,25 @@
-var app = angular.module("test-app", []);
+var app = angular.module("test-app", ['authModule']);
 
-app.config(function ($routeProvider, AuthService) {
+app.config(function ($routeProvider) {
     $routeProvider
         .when('/',
         {
+            templateUrl: "views/app.html",
+            controller: "AppCtrl",
             resolve: {
-                authTest: AuthService.loginTest()
+                authTest: function(AuthService) {
+                    return AuthService.loginTest()
+                }
             }
         })
         .when('/login',
         {
-            templateUrl: "login.html",
+            templateUrl: "views/login.html",
             controller: "LoginCtrl",
             resolve: {
-                authTest: AuthService.loginTest()
+                authTest: function(AuthService) {
+                    return AuthService.loginTest()
+                }
             }
         })
         .otherwise(
